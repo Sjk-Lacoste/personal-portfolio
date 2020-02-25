@@ -1,6 +1,7 @@
 # Auto-generated files
 __pycache__/
 .idea/
+react/node_modules/
 
 # Mac
 .DS_Store
@@ -9,3 +10,6 @@ __pycache__/
 db.sqlite3
 *.log
 local_settings.py
+
+DevFolio/
+react/package-lock.json
