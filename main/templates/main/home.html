@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!--================ Start Home Banner Area =================-->
+	<section class="home_banner_area">
+		<div class="banner_inner">
+			<div class="container">
+				<div class="row align-items-center justify-content-between">
+					<div class="col-lg-6">
+						<div class="banner_content">
+							<h3>Hey There !</h3>
+							<h1 class="text-uppercase">I am Tshepo Mohlatlole</h1>
+							<h5 class="text-uppercase">Junior Data Engineer</h5>
+							<div class="social_icons my-5">
+								<a href="#"><i class="ti-twitter"></i></a>
+								<a href="#"><i class="ti-skype"></i></a>
+								<a href="#"><i class="ti-instagram"></i></a>
+								<a href="#"><i class="ti-dribbble"></i></a>
+								<a href="https://www.linkedin.com/in/tshepo-mohlatlole-8085a599"><i class="ti-linkedin"></i></a>
+							</div>
+							<a class="primary_btn" href="#"><span>See My Work</span></a>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="home_right_img">
+							<img class="img-fluid" src="{% static 'img/banner/home-right.png' %}" alt="Tshepo Mohlatlole">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Home Banner Area =================-->
+
+    <!--================ Start Statistics Area =================-->
+	<section class="statistics_area">
+		<div class="container">
+			<div class="row justify-content-lg-start justify-content-center">
+				<div class="col-lg-2 col-md-3">
+					<div class="statistics_item">
+						<h3><span class="counter">5</span>+</h3>
+						<p>Happy Customer</p>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3">
+					<div class="statistics_item">
+						<h3><span class="counter">150</span>+</h3>
+						<p>Ticket Solved</p>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3">
+					<div class="statistics_item">
+						<h3><span class="counter">30</span>+</h3>
+						<p>Total Projects</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Statistics Area =================-->
+
+    <!--================ Start About Us Area =================-->
+	<section class="about_area section_gap">
+		<div class="container">
+			<div class="row justify-content-start align-items-center">
+				<div class="col-lg-5">
+					<div class="about_img">
+						<img class="" src="{% static 'img/about-us.png' %}" alt="">
+					</div>
+				</div>
+
+				<div class="offset-lg-1 col-lg-5">
+					<div class="main_title text-left">
+						<p class="top_text">About me <span></span></p>
+						<h2>
+							Junior Data Engineer
+						</h2>
+						<p>
+							Hey! Don't look further, here is the most efficient  consultant web developer 
+                            for your projects and products. 
+						</p>
+
+                        <p>
+                            My name is Tshepo Mohlatlole, a junior Data Engineer and technical assistant 
+                            at Umuzi Academy. At Umuzi, I impliment the design thinking methodology to create 
+                            dynamic and beautiful websites. Web development has become my speciality because 
+                            I am always looking for ways to learn and solve problems based on human centred 
+                            insights. 
+                        </p>
+            
+                        {% comment %} <p>
+                            I been in the field for 5 years and it has been nothing but a time of failures 
+                            and lessons: Been loving every moment of it.
+                        </p>
+
+                        <p>
+                            I am an entrepreneur, dabbles in design (Adobe Illustrator, XD and photoshop) 
+                            and overall thinker who is always looking for problems to solve.
+                        </p> {% endcomment %}
+
+						<a class="primary_btn" href="#"><span>Download CV</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End About Us Area =================-->
+
+    <!--================ Start Features Area =================-->
+	<section class="services_area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title">
+						<p class="top_text">Our Service <span></span></p>
+						<h2>What Service We <br>
+							Offer For You </h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+                {% for service in services %}
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                        <div class="service_item">
+                            <img src="{% static 'img/services/s1.png' %}" alt="">
+                            <h4>{{ service.name }}</h4>
+                            <p>
+                                {{ service.short_description }}
+                            </p>
+                            <a href="#" class="primary_btn2 mt-35">Learn More</a>
+                        </div>
+                    </div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+	<!--================ End Features Area =================-->
+
+    <!--================ Start Portfolio Area =================-->
+	<section class="portfolio_area" id="portfolio">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title">
+						<p class="top_text">Our Portfolio <span></span></p>
+						<h2>Check Our Recent <br>
+							Client Work </h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="filters portfolio-filter">
+				<ul>
+					<li class="active" data-filter="*">all</li>
+					<li data-filter=".popular">popular</li>
+					<li data-filter=".latest"> latest</li>
+					<li data-filter=".following">following</li>
+					<li data-filter=".upcoming">upcoming</li>
+				</ul>
+			</div>
+
+			<div class="filters-content">
+				<div class="row portfolio-grid">
+					<div class="grid-sizer col-md-3 col-lg-3"></div>
+					<div class="col-lg-6 col-md-6 all following">
+						<div class="single_portfolio">
+							<img class="img-fluid w-100" src="img/portfolio/p1.jpg" alt="">
+							<div class="overlay"></div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">Lens Mockup Design</a></h4>
+								<p>Art, Illustration</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 all latest popular upcoming">
+						<div class="single_portfolio">
+							<img class="img-fluid w-100" src="img/portfolio/p4.jpg" alt="">
+							<div class="overlay"></div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">Lens Mockup Design</a></h4>
+								<p>Art, Illustration</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 all latest following">
+						<div class="single_portfolio">
+							<img class="img-fluid w-100" src="img/portfolio/p2.jpg" alt="">
+							<div class="overlay"></div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">Lens Mockup Design</a></h4>
+								<p>Art, Illustration</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 all latest upcoming">
+						<div class="single_portfolio">
+							<img class="img-fluid w-100" src="img/portfolio/p3.jpg" alt="">
+							<div class="overlay"></div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">Lens Mockup Design</a></h4>
+								<p>Art, Illustration</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 all popular">
+						<div class="single_portfolio">
+							<img class="img-fluid w-100" src="img/portfolio/p6.jpg" alt="">
+							<div class="overlay"></div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">Lens Mockup Design</a></h4>
+								<p>Art, Illustration</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 all popular latest following">
+						<div class="single_portfolio">
+							<img class="img-fluid w-100" src="img/portfolio/p5.jpg" alt="">
+							<div class="overlay"></div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">Lens Mockup Design</a></h4>
+								<p>Art, Illustration</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Portfolio Area =================-->
+{% endblock content %}

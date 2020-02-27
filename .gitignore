@@ -11,5 +11,5 @@ db.sqlite3
 *.log
 local_settings.py
 
-DevFolio/
+breed2/
 react/package-lock.json

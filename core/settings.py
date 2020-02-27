@@ -40,10 +40,11 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django_summernote',
     'phonenumber_field',
-
+    
+    'main',
     'projects',
     'clients',
-
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
