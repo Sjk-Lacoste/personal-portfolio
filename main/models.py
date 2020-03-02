@@ -1,4 +1,5 @@
 from django.db import models
+# from fontawesome_5.fields import IconField
 
 
 # Create your models here.
@@ -7,4 +8,7 @@ class Service(models.Model):
     slug = models.SlugField(unique=True)
     short_descripion = models.CharField(max_length=200)
     description = models.TextField()
-    image = models.ImageField(upload_to='images/')
+    icon = models.ImageField(upload_to='services/')
+
+    def __str__(self):
+        return self.name

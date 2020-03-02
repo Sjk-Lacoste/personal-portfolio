@@ -1,16 +1,18 @@
 from django.shortcuts import render
-from .models import Service
 from projects.models import (
     Skill,
     Category,
     TechStack,
     Project
 )
+from .models import Service
 
 # Create your views here.
 def home(request):
+    services = Service.objects.all()[:3]
+
     context = {
-        # 'services': Service.objects.all()[:3]
+        'services': services
     }
 
     return render(request, 'main/home.html', context)

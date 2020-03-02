@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django_summernote',
     'phonenumber_field',
+    'fontawesome_5',
     
     'main',
     'projects',
