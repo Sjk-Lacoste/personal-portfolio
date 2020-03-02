@@ -2,6 +2,7 @@
 __pycache__/
 .idea/
 react/node_modules/
+media/
 
 # Mac
 .DS_Store
