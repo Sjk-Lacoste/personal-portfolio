@@ -10,7 +10,7 @@ class Skill(models.Model):
     slug = models.SlugField(unique=True)
     short_description = models.CharField(max_length=250)
     description = models.TextField()
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='skills/')
 
     def __str__(self):
         return self.name
@@ -57,7 +57,10 @@ class TechStack(models.Model):
     slug = models.SlugField(unique=True)
     short_description = models.CharField(max_length=250)
     description = models.TextField()
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='techstack/')
+
+    def __str__(self):
+        return self.name
 
     def get_absolute_url(self):
         kwargs = {
@@ -80,13 +83,16 @@ class Project(models.Model):
     slug = models.SlugField(unique=True)
     status = models.CharField(max_length=50, choices=STATUS)
     client = models.ForeignKey(Client, on_delete=models.CASCADE, null=True, blank=True)
-    is_complete = models.BooleanField(default=False)
+    tech_stack = models.ManyToManyField(TechStack)
     url = models.URLField(max_length=200)
     short_description = models.CharField(max_length=200)
-    tech_stack = models.ManyToManyField(TechStack)
+    description = models.TextField()
+    image = models.ImageField(upload_to='projects/')
     started_on = models.DateField()
     finished_on = models.DateField()
-    image = models.ImageField(upload_to='images/')
     created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now_add=True)
-    description = models.TextField()
+    updated_on = models.DateField()
+    is_complete = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
