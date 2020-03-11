@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'main',
     'projects',
     'clients',
+    'frontend',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -118,6 +119,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Rest Framework
+# REST_FRAMEWORK = {
+#     'DEFAULT_RENDERER_CLASSES': (
+#         'rest_framework.renderers.JSONRenderer',
+#     )
+# }
 
 
 # Internationalization

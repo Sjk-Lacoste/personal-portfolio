@@ -6,8 +6,15 @@ from projects.models import (
     Project
 )
 from .models import Service
+from .serializers import ServiceSerializer
+from rest_framework import generics
+
 
 # Create your views here.
+class ServiceListCreate(generics.ListCreateAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+
 def home(request):
     services = Service.objects.all()[:3]
 

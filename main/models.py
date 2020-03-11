@@ -6,7 +6,7 @@ from django.db import models
 class Service(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
-    short_descripion = models.CharField(max_length=200)
+    short_description = models.CharField(max_length=200)
     description = models.TextField()
     icon = models.ImageField(upload_to='services/')
 
