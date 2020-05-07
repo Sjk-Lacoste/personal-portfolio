@@ -37,6 +37,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'rest_framework',
+    'corsheaders',
     'whitenoise.runserver_nostatic',
     'django_summernote',
     'phonenumber_field',
@@ -56,6 +57,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -126,6 +128,12 @@ AUTH_PASSWORD_VALIDATORS = [
 #         'rest_framework.renderers.JSONRenderer',
 #     )
 # }
+# we whitelist localhost:3000 because that's where frontend will be served
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8000',
+    'http://localhost:3000',
+)
 
 
 # Internationalization
