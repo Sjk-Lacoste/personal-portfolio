@@ -23,7 +23,11 @@ from rest_framework import routers
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path('', include('main.urls')),
-    path('api/', include('projects.urls')),
-    path('api/clients/', include('clients.urls')),
+
+    path('api/', include([
+        path('services/', include('main.urls', namespace='services')),
+        # path('projects/', include('projects.api.urls', namespace='projects')),
+        path('skills/', include('skills.api.urls', namespace='skills')),
+        path('clients/', include('clients.urls', namespace='clients')),
+    ])),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -1,16 +1,10 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import (
-    Skill,
     Category,
     TechStack,
     Project
 )
-
-class SkillAdmin(SummernoteModelAdmin):
-    summernote_fields = '__all__'
-    list_display = ('name', 'short_description',)
-    prepopulated_fields = {"slug": ("name",)}
 
 
 class CategoryAdmin(SummernoteModelAdmin):
@@ -28,7 +22,6 @@ class ProjectAdmin(SummernoteModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
 
 # Register your models here.
-admin.site.register(Skill, SkillAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(TechStack, TechStackAdmin)
 admin.site.register(Project, ProjectAdmin)

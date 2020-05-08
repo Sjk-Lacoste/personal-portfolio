@@ -1,29 +1,27 @@
 from rest_framework import serializers
-from .models import Skill, Category, TechStack, Project
-
-
-class SkillSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Skill
-        fields = ('name', 'slug', 'short_description', 'description', 'image',)
+from projects.models import (
+    Category,
+    TechStack,
+    Project
+)
 
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('name', 'slug', 'parent', 'short_description', 'description',)
+        fields = ['name', 'slug', 'parent', 'short_description', 'description']
 
 
 class TechStackSerializer(serializers.ModelSerializer):
     class Meta:
         model = TechStack
-        fields = ('name', 'slug', 'short_description', 'description', 'image',)
+        fields = ['name', 'slug', 'short_description', 'description', 'image']
 
 
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = (
+        fields = [
             'title',
             'slug',
             'status',
@@ -35,5 +33,5 @@ class ProjectSerializer(serializers.ModelSerializer):
             'image',
             'started_on',
             'finished_on',
-            'is_complete',
-        )
+            'is_complete'
+        ]

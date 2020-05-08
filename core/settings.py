@@ -36,24 +36,25 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'rest_framework',
-    'corsheaders',
-    'whitenoise.runserver_nostatic',
-    'django_summernote',
-    'phonenumber_field',
-    'fontawesome_5',
-    
-    'main',
-    'projects',
-    'clients',
-    'frontend',
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'corsheaders',
+    'whitenoise.runserver_nostatic',
+    'django_summernote',
+    'phonenumber_field',
+    'fontawesome_5',
+
+    'main',
+    'skills',
+    'projects',
+    'clients',
+    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -123,11 +124,22 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Rest Framework
-# REST_FRAMEWORK = {
-#     'DEFAULT_RENDERER_CLASSES': (
-#         'rest_framework.renderers.JSONRenderer',
-#     )
-# }
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    #     # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    #     'rest_framework.authentication.SessionAuthentication',
+    #     'rest_framework.authentication.BasicAuthentication',
+    # ),
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 # we whitelist localhost:3000 because that's where frontend will be served
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
