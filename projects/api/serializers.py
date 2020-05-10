@@ -9,13 +9,25 @@ from projects.models import (
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['name', 'slug', 'parent', 'short_description', 'description']
+        fields = [
+            'name',
+            'slug',
+            'parent',
+            'short_description',
+            'description'
+        ]
 
 
 class TechStackSerializer(serializers.ModelSerializer):
     class Meta:
         model = TechStack
-        fields = ['name', 'slug', 'short_description', 'description', 'image']
+        fields = [
+            'name',
+            'slug',
+            'short_description',
+            'description',
+            'image'
+        ]
 
 
 class ProjectSerializer(serializers.ModelSerializer):
