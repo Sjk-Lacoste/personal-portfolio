@@ -25,7 +25,6 @@ migrations/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -129,6 +128,7 @@ bower_components
 
 *.sublime*
 .vscode
+.idea
 
 psd
 thumb
