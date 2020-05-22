@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'personal_portfolio',
+        'NAME': 'portfolio',
         'USER': 'sjk_lacoste',
         'PASSWORD': 'password',
         'HOST': 'localhost',
@@ -126,18 +126,19 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-    #     # 'rest_framework_simplejwt.authentication.JWTAuthentication',
-    # ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+        # 'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
     # 'DEFAULT_AUTHENTICATION_CLASSES': (
     #     # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     #     'rest_framework.authentication.SessionAuthentication',
     #     'rest_framework.authentication.BasicAuthentication',
     # ),
 
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'PAGE_SIZE': 10
 }
 # we whitelist localhost:3000 because that's where frontend will be served
 CORS_ORIGIN_ALLOW_ALL = True

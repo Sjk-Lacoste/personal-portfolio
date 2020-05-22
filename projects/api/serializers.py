@@ -33,17 +33,4 @@ class TechStackSerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = [
-            'title',
-            'slug',
-            'status',
-            'client',
-            'tech_stack',
-            'url',
-            'short_description',
-            'description',
-            'image',
-            'started_on',
-            'finished_on',
-            'is_complete'
-        ]
+        fields = '__all__'
