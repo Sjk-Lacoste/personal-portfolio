@@ -1,5 +1,5 @@
 dj-database-url==0.5.0
-Django==3.0.3
+Django==3.0.7
 django-cors-headers==3.2.1
 django-fontawesome-5==1.0.18
 django-heroku==0.3.1
