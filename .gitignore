@@ -19,7 +19,7 @@ media
 
 
 # Migrations
-migrations/
+# migrations/
 # C extensions
 *.so
 
