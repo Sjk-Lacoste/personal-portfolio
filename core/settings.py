@@ -181,6 +181,6 @@ EMAIL_HOST_USER = '1a906c54bf657c'
 EMAIL_HOST_PASSWORD = '4c958a774cafc3'
 EMAIL_PORT = 2525
 # EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'webmaster@tshepomohlatlole.com'
+DEFAULT_FROM_EMAIL = 'info@tshepomohlatlole.com'
 
 django_heroku.settings(locals())
